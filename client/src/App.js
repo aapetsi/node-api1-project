@@ -59,6 +59,26 @@ class App extends React.Component {
     const { users } = this.state;
     return (
       <div className="App">
+        <div>
+          <form className="form" onSubmit={this.handleSubmit}>
+            <h1>Add user</h1>
+            <input
+              type="text"
+              placeholder="name"
+              name="name"
+              value={this.state.name}
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              placeholder="bio"
+              name="bio"
+              value={this.state.bio}
+              onChange={this.handleChange}
+            />
+            <button>Add user</button>
+          </form>
+        </div>
         {users.map(user => (
           <div className="card" key={user.id}>
             <p>Name: {user.name}</p>
@@ -68,24 +88,7 @@ class App extends React.Component {
             <button onClick={() => this.deleteUser(user.id)}>Delete</button>
           </div>
         ))}
-        <form onSubmit={this.handleSubmit}>
-          <h1>Add user</h1>
-          <input
-            type="text"
-            placeholder="name"
-            name="name"
-            value={this.state.name}
-            onChange={this.handleChange}
-          />
-          <input
-            type="text"
-            placeholder="bio"
-            name="bio"
-            value={this.state.bio}
-            onChange={this.handleChange}
-          />
-          <button>Add user</button>
-        </form>
+
         {this.state.error && <p>{this.state.error}</p>}
       </div>
     );

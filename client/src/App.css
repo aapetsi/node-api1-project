@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: inline-block;
 }
 
 .App-logo {
@@ -23,6 +29,7 @@
 
 .card {
   box-shadow: 2px 2px #888888;
-  width: 50%;
+  width: 30%;
   margin: 0 auto;
+  border: 1px solid black;
 }
