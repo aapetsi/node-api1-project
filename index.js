@@ -14,6 +14,10 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.json({ message: 'App works' });
+});
+
 app.post('/api/users', (req, res) => {
   const user = {
     name: req.body.name,
